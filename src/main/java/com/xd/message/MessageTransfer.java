@@ -5,5 +5,4 @@ package com.xd.message;
  */
 public class MessageTransfer {
 
-
 }

@@ -7,13 +7,55 @@
     <packaging>war</packaging>
     <version>2.2-SNAPSHOT</version>
     <name>OhshWchat</name>
-    <url>http://www.ohsh.com</url>
+    <url>http://www.xiedeng.net</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <struts.version>2.3.8</struts.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-core</artifactId>
+            <version>${struts.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-json-plugin</artifactId>
+            <version>${struts.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-spring-plugin</artifactId>
+            <version>${struts.version}</version>
+
+            <!-- 去掉不需要的依赖 -->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-web</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-beans</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-context</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.bastengao.freeroute</groupId>
+            <artifactId>struts2-freeroute4spring</artifactId>
+            <version>1.0.4</version>
+        </dependency>
         <!-- log(slf4j) -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -47,12 +89,6 @@
             <version>1.13</version>
         </dependency>
 
-        <!-- excel操作相关 -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>3.9</version>
-        </dependency>
 
         <!-- 打zip包相关  -->
         <dependency>
@@ -66,6 +102,20 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.2.3</version>
+        </dependency>
+
+        <!-- guava工具组件 -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>15.0</version>
+        </dependency>
+
+        <!-- json 工具类 -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.2</version>
         </dependency>
 
         <!-- QRcode 生成二维码的-->
